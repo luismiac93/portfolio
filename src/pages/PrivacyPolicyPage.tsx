@@ -1,10 +1,8 @@
 import React from "react";
-import { Logo } from "../components/Logo";
 
 const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="mx-4 md:mx-0">
-      <Logo />
       <h2 className="text-3xl font-semibold my-6 text-center">
         Privacy Policy
       </h2>
@@ -107,7 +105,7 @@ const PrivacyPolicyPage: React.FC = () => {
           <br />
           <a
             href="mailto:luismiac93@gmail.com"
-            className="transition-colors duration-300"
+            className="special-link transition-colors duration-300"
           >
             luismiac93@gmail.com
           </a>

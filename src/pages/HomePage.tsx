@@ -1,7 +1,9 @@
-import { Logo } from "../components/Logo"
+
 
 export const HomePage = () => {
   return (
-    <Logo />
-  )
-}
+    <>
+      <h1>Home</h1>
+    </>
+  );
+};

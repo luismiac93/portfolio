@@ -1,7 +1,7 @@
 export const Logo = () => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center">
-      <div className="rubik-cube">
+      <div className="rubik-cube mr-5">
         <div className="core"></div>
         <div className="face front">
           {[...Array(9)].map((_, i) => (
@@ -39,8 +39,7 @@ export const Logo = () => {
           ))}
         </div>
       </div>
-
-      <h1 className="main-title text-2xl sm:text-4xl font-semibold my-8 text-center ml-6 mt-12 md:mt-0">
+      <h1 className="main-title text-xl sm:text-xl font-semibold text-center">
         luismiac93
       </h1>
     </div>

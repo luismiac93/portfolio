@@ -1,10 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import PortfolioApp from "./PortfolioApp.tsx";
+import { ThemeProvider } from "./components/theme-provider.tsx";
+import { RouterProvider } from "react-router";
+import { router } from "./router/router.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <PortfolioApp />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="max-w-7xl mx-auto py-9">
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   </StrictMode>
 );
