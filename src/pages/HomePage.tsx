@@ -1,7 +1,7 @@
-import React from 'react'
+import { Logo } from "../components/Logo"
 
 export const HomePage = () => {
   return (
-    <h1 className='font-mono'>HomePage</h1>
+    <Logo />
   )
 }

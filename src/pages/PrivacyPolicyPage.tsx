@@ -1,14 +1,18 @@
 import React from "react";
+import { Logo } from "../components/Logo";
 
 const PrivacyPolicyPage: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">@luismiac93 - Privacy Policy</h1>
+    <div className="mx-4 md:mx-0">
+      <Logo />
+      <h2 className="text-3xl font-semibold my-6 text-center">
+        Privacy Policy
+      </h2>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
         <p className="mb-4">
-          This Privacy Policy describes how @luismiac93 ("we", "us", or "our")
+          This Privacy Policy describes how luismiac93 ("we", "us", or "our")
           collects, uses, and handles your personal information across all our
           products and services. We respect your privacy and are committed to
           protecting your personal data.
@@ -18,12 +22,13 @@ const PrivacyPolicyPage: React.FC = () => {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">2. Acceptance of Policy</h2>
         <p className="mb-4">
-          By accessing or using any of @luismiac93's products, services, or
-          applications, you acknowledge that you have read, understood, and agree
-          to be bound by the terms of this Privacy Policy. If you do not agree
-          with any part of this policy, you must not use our products or services.
-          Your continued use of our products and services following the posting of
-          changes to this policy will be deemed your acceptance of those changes.
+          By accessing or using any of luismiac93's products, services, or
+          applications, you acknowledge that you have read, understood, and
+          agree to be bound by the terms of this Privacy Policy. If you do not
+          agree with any part of this policy, you must not use our products or
+          services. Your continued use of our products and services following
+          the posting of changes to this policy will be deemed your acceptance
+          of those changes.
         </p>
       </section>
 
@@ -98,13 +103,13 @@ const PrivacyPolicyPage: React.FC = () => {
         <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
         <p className="mb-4">
           If you have any questions about this Privacy Policy or any of
-          @luismiac93's products, please contact us at:
+          luismiac93's products, please contact us at:
           <br />
           <a
-            href="mailto:luismiac93@gamail.com"
-            className="text-blue-600 hover:underline"
+            href="mailto:luismiac93@gmail.com"
+            className="transition-colors duration-300"
           >
-            luismiac93@gamail.com
+            luismiac93@gmail.com
           </a>
         </p>
       </section>

@@ -1,14 +1,188 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 @import "tailwindcss";
 
 body {
-  @apply bg-black text-[#e3e3e3] font-sans;
+  @apply bg-black text-text-app font-sans;
 }
 
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --font-game: "Press Start 2P", system-ui;
   --font-display: "Inter", sans-serif;
+  --color-text-app: #e3e3e3;
+  --color-text-link: #b3b3b3;
+}
+
+h1 {
+  @apply font-sans;
+}
+
+h2 {
+  @apply font-sans;
+}
+
+p {
+  @apply font-mono;
+}
+
+ul {
+  @apply font-mono;
+}
+
+a {
+  @apply text-text-link hover:text-white relative;
+}
+
+a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 200% 200%;
+  animation: rainbowText 3s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+a:hover::after {
+  animation-play-state: running;
+}
+
+.main-title {
+  @apply font-game uppercase tracking-widest;
+}
+
+@keyframes rainbowText {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Rubik's Cube CSS */
+:root {
+  --cube-size: min(10vw, 10vh, 300px);
+  --face-translate: calc(var(--cube-size) / 2);
+}
+@media (max-width: 600px) {
+  :root {
+    --cube-size: min(20vw, 20vw, 150px);
+    /* override variables for small screens */
+  }
+}
+
+.rubik-cube {
+  width: var(--cube-size);
+  max-width: 100vw;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(-30deg);
+}
+
+.rubik-cube:hover {
+  animation: rotateCube 5s infinite linear;
+}
+
+.rubik-cube .face {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #111;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #000a;
+}
+
+.sticker {
+  width: 100%;
+  height: 100%;
+  margin: 6%;
+  box-sizing: border-box;
+  border: 2px solid #222;
+  border-radius: 6px;
+}
+
+.sticker-front {
+  background: red;
+}
+.sticker-back {
+  background: orange;
+}
+.sticker-left {
+  background: yellow;
+}
+.sticker-right {
+  background: green;
+}
+.sticker-top {
+  background: blue;
+}
+.sticker-bottom {
+  background: white;
+}
+
+.rubik-cube .face.front {
+  transform: rotateY(0deg) translateZ(var(--face-translate));
+}
+.rubik-cube .face.back {
+  transform: rotateY(180deg) translateZ(var(--face-translate));
+}
+.rubik-cube .face.left {
+  transform: rotateY(-90deg) translateZ(var(--face-translate));
+}
+.rubik-cube .face.right {
+  transform: rotateY(90deg) translateZ(var(--face-translate));
+}
+.rubik-cube .face.top {
+  transform: rotateX(90deg) translateZ(var(--face-translate));
+}
+.rubik-cube .face.bottom {
+  transform: rotateX(-90deg) translateZ(var(--face-translate));
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(-30deg) rotateY(-30deg);
+  }
+  100% {
+    transform: rotateX(330deg) rotateY(330deg);
+  }
+}
+
+.core {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000a;
+  z-index: 0;
+}
+
+.l-green {
+  background: white;
 }
