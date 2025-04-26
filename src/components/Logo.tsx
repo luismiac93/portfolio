@@ -40,7 +40,7 @@ export const Logo = () => {
         </div>
       </div>
 
-      <h1 className="main-title text-4xl font-semibold my-8 text-center ml-6 mt-12 md:mt-0">
+      <h1 className="main-title text-2xl sm:text-4xl font-semibold my-8 text-center ml-6 mt-12 md:mt-0">
         luismiac93
       </h1>
     </div>
