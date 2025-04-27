@@ -18,7 +18,7 @@ import {
 } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import { Cube } from "./Cube";
+import { SmallCube } from "./SmallCube";
 
 export const MainMenu = () => {
   const [open, setOpen] = useState(false);
@@ -79,7 +79,7 @@ export const MainMenu = () => {
         >
           <SheetHeader>
             <SheetTitle className="flex items-center justify-center mb-4">
-              <Cube />
+              <SmallCube />
             </SheetTitle>
             <SheetDescription asChild>
               <h1
