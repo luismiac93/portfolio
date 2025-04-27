@@ -1,4 +1,10 @@
-import { Link } from "react-router";
+import { Home, Menu } from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router";
+import { LargeCube } from "./LargeCube";
+import { Logo } from "./Logo";
+import { Social } from "./Social";
+import { Button } from "./ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -6,8 +12,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
-import { Home, Menu } from "lucide-react";
-import { Logo } from "./Logo";
 import {
   Sheet,
   SheetContent,
@@ -16,9 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { Button } from "./ui/button";
-import { useState } from "react";
-import { LargeCube } from "./LargeCube";
+import { Separator } from "./ui/separator";
 
 const mainMenu = [
   {
@@ -42,8 +44,10 @@ const mainMenu = [
 
 export const MainMenu = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
   return (
-    <div className="sticky top-9 flex justify-between items-center bg-black  w-full border border-slate-200 dark:border-neutral-900 rounded-lg py-3 px-4 dark:shadow-menu">
+    <div className="sticky top-9 flex justify-between items-center bg-white dark:bg-black  w-full border border-slate-200 dark:border-neutral-900 rounded-lg py-3 px-4 shadow-menu-light dark:shadow-menu">
       <Logo className="hidden md:flex" />
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
@@ -52,6 +56,7 @@ export const MainMenu = () => {
               <NavigationMenuLink
                 asChild
                 className={navigationMenuTriggerStyle()}
+                data-active={location.pathname === item.to}
               >
                 <Link to={item.to}>{item.icon ? item.icon : item.label}</Link>
               </NavigationMenuLink>
@@ -59,7 +64,9 @@ export const MainMenu = () => {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="hidden md:flex">Social</div>
+      <div className="hidden md:flex">
+        <Social />
+      </div>
 
       {/* mobile menu */}
       <Logo className="md:hidden" />
@@ -80,7 +87,7 @@ export const MainMenu = () => {
             <SheetDescription asChild>
               <h1
                 onClick={() => setOpen(false)}
-                className="md:hidden main-title text-white text-xl sm:text-xl font-semibold text-center"
+                className="md:hidden main-title dark:text-white text-xl sm:text-xl font-semibold text-center"
               >
                 <Link to="/">luismiac93</Link>
               </h1>
@@ -92,12 +99,15 @@ export const MainMenu = () => {
               asChild
               onClick={() => setOpen(false)}
               variant="ghost"
+              data-active={location.pathname === item.to}
             >
               <Link to={item.to} className="flex items-center">
                 {item.label}
               </Link>
             </Button>
           ))}
+          <Separator />
+          <Social className="mt-4" />
         </SheetContent>
       </Sheet>
     </div>

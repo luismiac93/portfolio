@@ -20,6 +20,7 @@ body {
   --color-text-app: #e3e3e3;
   --color-text-link: #b3b3b3;
   --shadow-menu: 0 5px 18px rgba(204, 204, 204, 0.1);
+  --shadow-menu-light: 0 5px 18px rgba(204,204,204,0.2);
 }
 
 h1 {
@@ -39,7 +40,7 @@ ul {
 }
 
 .special-link {
-  @apply text-text-link hover:text-white relative;
+  @apply text-text-link dark:hover:text-white hover:text-black relative;
 }
 
 .special-link:hover::after {
