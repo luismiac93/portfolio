@@ -18,7 +18,27 @@ import {
 } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import { SmallCube } from "./SmallCube";
+import { LargeCube } from "./LargeCube";
+
+const mainMenu = [
+  {
+    to: "/",
+    label: "Home",
+    icon: <Home className="mx-2 h-4 w-4" />,
+  },
+  {
+    to: "/projects",
+    label: "Projects",
+  },
+  {
+    to: "/about",
+    label: "About",
+  },
+  {
+    to: "/contact",
+    label: "Contact",
+  },
+];
 
 export const MainMenu = () => {
   const [open, setOpen] = useState(false);
@@ -27,40 +47,16 @@ export const MainMenu = () => {
       <Logo className="hidden md:flex" />
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link to="/">
-                <Home className="mx-2 h-4 w-4" />
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link to="/privacy-policy">Projects</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link to="/privacy-policy">About</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link to="/privacy-policy">Contact</Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+          {mainMenu.map((item) => (
+            <NavigationMenuItem key={item.to}>
+              <NavigationMenuLink
+                asChild
+                className={navigationMenuTriggerStyle()}
+              >
+                <Link to={item.to}>{item.icon ? item.icon : item.label}</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
       <div className="hidden md:flex">Social</div>
@@ -79,7 +75,7 @@ export const MainMenu = () => {
         >
           <SheetHeader>
             <SheetTitle className="flex items-center justify-center mb-4">
-              <SmallCube />
+              <LargeCube />
             </SheetTitle>
             <SheetDescription asChild>
               <h1
@@ -90,18 +86,18 @@ export const MainMenu = () => {
               </h1>
             </SheetDescription>
           </SheetHeader>
-          <Button asChild onClick={() => setOpen(false)} variant="ghost">
-            <Link to="/">Home</Link>
-          </Button>
-          <Button asChild onClick={() => setOpen(false)} variant="ghost">
-            <Link to="/privacy-policy">Projects</Link>
-          </Button>
-          <Button asChild onClick={() => setOpen(false)} variant="ghost">
-            <Link to="/privacy-policy">About</Link>
-          </Button>
-          <Button asChild onClick={() => setOpen(false)} variant="ghost">
-            <Link to="/privacy-policy">Contact</Link>
-          </Button>
+          {mainMenu.map((item) => (
+            <Button
+              key={item.to}
+              asChild
+              onClick={() => setOpen(false)}
+              variant="ghost"
+            >
+              <Link to={item.to} className="flex items-center">
+                {item.label}
+              </Link>
+            </Button>
+          ))}
         </SheetContent>
       </Sheet>
     </div>

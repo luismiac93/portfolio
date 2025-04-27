@@ -85,9 +85,9 @@ ul {
 :root {
   --cube-size: 2.2rem;
   --cube-radius: 8px;
-  --small-cube-size: 4.2rem;
+  --large-cube-size: 4.2rem;
   --face-translate: calc(var(--cube-size) / 2);
-  --small-face-translate: calc(var(--small-cube-size) / 2);
+  --large-face-translate: calc(var(--large-cube-size) / 2);
   --radius: 1rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -187,29 +187,29 @@ ul {
 }
 
 /* Small cube specific styles */
-.small-rubik-cube {
-  width: var(--small-cube-size);
-  height: var(--small-cube-size);
+.large-rubik-cube {
+  width: var(--large-cube-size);
+  height: var(--large-cube-size);
   margin: 20px;
 }
 
-.small-rubik-cube.cube-base .face.front {
-  transform: translateZ(var(--small-face-translate));
+.large-rubik-cube.cube-base .face.front {
+  transform: translateZ(var(--large-face-translate));
 }
-.small-rubik-cube.cube-base .face.back {
-  transform: rotateY(180deg) translateZ(var(--small-face-translate));
+.large-rubik-cube.cube-base .face.back {
+  transform: rotateY(180deg) translateZ(var(--large-face-translate));
 }
-.small-rubik-cube.cube-base .face.left {
-  transform: rotateY(-90deg) translateZ(var(--small-face-translate));
+.large-rubik-cube.cube-base .face.left {
+  transform: rotateY(-90deg) translateZ(var(--large-face-translate));
 }
-.small-rubik-cube.cube-base .face.right {
-  transform: rotateY(90deg) translateZ(var(--small-face-translate));
+.large-rubik-cube.cube-base .face.right {
+  transform: rotateY(90deg) translateZ(var(--large-face-translate));
 }
-.small-rubik-cube.cube-base .face.top {
-  transform: rotateX(90deg) translateZ(var(--small-face-translate));
+.large-rubik-cube.cube-base .face.top {
+  transform: rotateX(90deg) translateZ(var(--large-face-translate));
 }
-.small-rubik-cube.cube-base .face.bottom {
-  transform: rotateX(-90deg) translateZ(var(--small-face-translate));
+.large-rubik-cube.cube-base .face.bottom {
+  transform: rotateX(-90deg) translateZ(var(--large-face-translate));
 }
 
 /* Common sticker styles */

@@ -1,5 +1,5 @@
 import { BaseCube } from "./BaseCube";
 
 export const Cube = () => {
-  return <BaseCube variant="large" className="mr-5" />;
+  return <BaseCube variant="small" className="mr-5" />;
 };

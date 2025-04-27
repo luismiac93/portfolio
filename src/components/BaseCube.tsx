@@ -2,11 +2,11 @@ import { cn } from "../lib/utils";
 
 interface BaseCubeProps {
   className?: string;
-  variant: "large" | "small";
+  variant: "small" | "large";
 }
 
 export const BaseCube = ({ className, variant }: BaseCubeProps) => {
-  const baseClass = variant === "large" ? "rubik-cube" : "small-rubik-cube";
+  const baseClass = variant === "small" ? "rubik-cube" : "large-rubik-cube";
   
   return (
     <div className={cn(baseClass, "cube-base", className)}>
