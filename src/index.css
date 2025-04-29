@@ -335,3 +335,19 @@ ul {
     @apply bg-background text-foreground;
   }
 }
+
+
+.background-custom {
+  background-image:
+    /* Bottom-left purple hint */
+    radial-gradient(ellipse 60% 50% at bottom left, oklch(50.5% 0.213 27.518 / 0.15) 0%, transparent 80%),
+
+    /* Bottom-center orange/brown hint */
+    radial-gradient(ellipse 60% 80% at bottom, oklch(44.8% 0.119 151.328 / 0.25) 0%, transparent 90%),
+
+    /* Bottom-right green hint */
+    radial-gradient(ellipse 60% 50% at bottom right, oklch(42.4% 0.199 265.638 / 0.15) 0%, transparent 80%);
+
+  /* Ensure the background covers the area */
+  min-height: 100vh; 
+}
