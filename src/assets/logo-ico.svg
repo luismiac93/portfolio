@@ -1,0 +1,62 @@
+<svg viewBox="150 180 305 340" xmlns="http://www.w3.org/2000/svg"> <!-- Adjusted viewBox height -->
+  <defs>
+    <!-- Define colors for reuse -->
+    <style>
+      .red { fill: #FF0000; }
+      .green { fill: #00FF00; }
+      .blue { fill: #0000FF; }
+      .white { fill: #FFFFFF; }
+      .sticker { stroke: black; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <!-- Group for the whole cube -->
+  <g id="rubiks-cube">
+
+    <!-- Top Face (Blue) - Unchanged -->
+    <g id="top-face" class="sticker">
+      <polygon class="blue" points="300,200 350,225 300,250 250,225" />
+      <polygon class="blue" points="350,225 400,250 350,275 300,250" />
+      <polygon class="blue" points="400,250 450,275 400,300 350,275" />
+      <polygon class="blue" points="250,225 300,250 250,275 200,250" />
+      <polygon class="blue" points="300,250 350,275 300,300 250,275" />
+      <polygon class="blue" points="350,275 400,300 350,325 300,300" />
+      <polygon class="blue" points="200,250 250,275 200,300 150,275" />
+      <polygon class="blue" points="250,275 300,300 250,325 200,300" />
+      <polygon class="blue" points="300,300 350,325 300,350 250,325" />
+    </g>
+
+    <!-- Front Face (Red) - Height increased by 5 points -->
+    <g id="front-face" class="sticker">
+      <!-- Row 1 (New Height: 50) -->
+      <polygon class="red" points="150,275 200,300 200,350 150,325" />
+      <polygon class="red" points="200,300 250,325 250,375 200,350" />
+      <polygon class="red" points="250,325 300,350 300,400 250,375" />
+      <!-- Row 2 (New Height: 50) -->
+      <polygon class="red" points="150,325 200,350 200,400 150,375" />
+      <polygon class="red" points="200,350 250,375 250,425 200,400" />
+      <polygon class="red" points="250,375 300,400 300,450 250,425" />
+      <!-- Row 3 (New Height: 50) -->
+      <polygon class="red" points="150,375 200,400 200,450 150,425" />
+      <polygon class="red" points="200,400 250,425 250,475 200,450" />
+      <polygon class="red" points="250,425 300,450 300,500 250,475" />
+    </g>
+
+    <!-- Right Face (Green/White L) - Height increased by 5 points -->
+    <g id="right-face" class="sticker">
+      <!-- Row 1 (New Height: 50) -->
+      <polygon class="green" points="300,350 350,325 350,375 300,400" />
+      <polygon class="white" points="350,325 400,300 400,350 350,375" />
+      <polygon class="green" points="400,300 450,275 450,325 400,350" />
+      <!-- Row 2 (New Height: 50) -->
+      <polygon class="green" points="300,400 350,375 350,425 300,450" />
+      <polygon class="white" points="350,375 400,350 400,400 350,425" />
+      <polygon class="green" points="400,350 450,325 450,375 400,400" />
+      <!-- Row 3 (New Height: 50) -->
+      <polygon class="green" points="300,450 350,425 350,475 300,500" />
+      <polygon class="white" points="350,425 400,400 400,450 350,475" />
+      <polygon class="white" points="400,400 450,375 450,425 400,450" />
+    </g>
+
+  </g>
+</svg>
