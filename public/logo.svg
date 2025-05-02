@@ -2,11 +2,11 @@
   <defs>
     <!-- Define colors for reuse -->
     <style>
-      .red { fill: #FF0000; }
-      .green { fill: #00FF00; }
-      .blue { fill: #0000FF; }
+      .red { fill: #ff0000; }
+      .green { fill: #008000; }
+      .blue { fill: #0000ff; }
       .white { fill: #FFFFFF; }
-      .sticker { stroke: black; stroke-width: 1.5; }
+      .sticker { stroke: black; stroke-width: 2.5; }
     </style>
   </defs>
 
