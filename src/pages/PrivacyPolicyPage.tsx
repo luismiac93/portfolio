@@ -110,7 +110,7 @@ const PrivacyPolicyPage: React.FC = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
+        <h2 className="text-2xl font-semibold mb-4">9. Contact Us</h2>
         <p className="mb-4">
           If you have any questions about this Privacy Policy or any of
           luismiac93's products, please contact us at:
