@@ -88,8 +88,20 @@ const PrivacyPolicyPage: React.FC = () => {
       </section>
 
       <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">7. Data Retention</h2>
+        <p className="mb-4">
+          We retain personal information only for as long as necessary to
+          provide our services, comply with legal obligations, resolve disputes,
+          and enforce our agreements. When personal information is no longer
+          required, we securely delete or anonymize it. Users may also request
+          deletion of their personal data by contacting us at the email address
+          provided below.
+        </p>
+      </section>
+
+      <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">
-          7. Changes to This Policy
+          8. Changes to This Policy
         </h2>
         <p className="mb-4">
           We may update our Privacy Policy from time to time. We will notify you
